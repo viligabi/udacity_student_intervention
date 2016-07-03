@@ -571,23 +571,36 @@ Testing set has 95 samples.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p><strong>SVM</strong>: 
-Pro:</p>
+<p><strong>SVM</strong>:</p>
+<p>Pro:</p>
 <ul>
 <li>Separates data using linear function (fast predictions)</li>
 <li>Maximalizes margin (helps to avoid overfitting)</li>
-<li>Using kernel trick (enriching data dimensions) it can solve highly complex issues
-Con:</li>
+<li>Using kernel trick (enriching data dimensions) it can solve highly complex issues</li>
+</ul>
+<p>Con:</p>
+<ul>
 <li>Goodness is highly depending on the chosen kernel function (different datasets may need different kernel function)</li>
 </ul>
-<p><strong>Ensemble</strong>:
-Pro:</p>
+<p><strong>Ensemble</strong>:</p>
+<p>Pro:</p>
 <ul>
 <li>using random subsets of data (bagging) creating rules (weak learning), summing up the "subrules" we can create complex rules on dataset</li>
 <li>using these complex rules the error rate can be kept relatively low (no overfitting), and</li>
-<li>high dimensional data can be handled quite well
-Con:</li>
+<li>high dimensional data can be handled quite well</li>
+</ul>
+<p>Con:</p>
+<ul>
 <li>using too many rules, the training and prediction times might be too much</li>
+</ul>
+<p><strong>Decision Tree</strong>:</p>
+<p>Pro:</p>
+<ul>
+<li>fast prediction</li>
+</ul>
+<p>Con:</p>
+<ul>
+<li>easy to overfit on given data -&gt; not generalizing well enough</li>
 </ul>
 
 </div>

@@ -184,20 +184,32 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # **Answer: **
 # 
 # **SVM**: 
+# 
 # Pro:
 # * Separates data using linear function (fast predictions)
 # * Maximalizes margin (helps to avoid overfitting)
 # * Using kernel trick (enriching data dimensions) it can solve highly complex issues
+# 
 # Con:
 # * Goodness is highly depending on the chosen kernel function (different datasets may need different kernel function)
 # 
 # **Ensemble**:
+# 
 # Pro:
 # * using random subsets of data (bagging) creating rules (weak learning), summing up the "subrules" we can create complex rules on dataset
 # * using these complex rules the error rate can be kept relatively low (no overfitting), and
 # * high dimensional data can be handled quite well
+# 
 # Con:
 # * using too many rules, the training and prediction times might be too much
+# 
+# **Decision Tree**:
+# 
+# Pro:
+# * fast prediction
+# 
+# Con:
+# * easy to overfit on given data -> not generalizing well enough
 
 # ### Setup
 # Run the code cell below to initialize three helper functions which you can use for training and testing the three supervised learning models you've chosen above. The functions are as follows:
