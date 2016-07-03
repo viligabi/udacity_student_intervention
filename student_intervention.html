@@ -229,7 +229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -237,8 +237,6 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.notebook_repr_html&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
 <span class="c1"># Read student data</span>
 <span class="n">student_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;student-data.csv&quot;</span><span class="p">)</span>
@@ -283,7 +281,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -346,7 +344,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -429,7 +427,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -479,7 +477,7 @@ Feature values:
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -517,7 +515,7 @@ Name: passed, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -607,7 +605,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -686,7 +684,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -770,59 +768,59 @@ F1 score for test set: 0.8067.
 ---------------------------------------
 Training a SVC using a training set size of 200. . .
 Trained model in 0.0090 seconds
-Made predictions in 0.0070 seconds.
+Made predictions in 0.0060 seconds.
 Made predictions in 0.0060 seconds.
 F1 score for training set: 0.8608.
 F1 score for test set: 0.8205.
 ---------------------------------------
 Training a SVC using a training set size of 300. . .
 Trained model in 0.0180 seconds
-Made predictions in 0.0140 seconds.
+Made predictions in 0.0130 seconds.
 Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8584.
 F1 score for test set: 0.8462.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0420 seconds
-Made predictions in 0.0170 seconds.
-Made predictions in 0.0290 seconds.
-F1 score for training set: 0.8176.
-F1 score for test set: 0.8000.
+Trained model in 0.0400 seconds
+Made predictions in 0.0160 seconds.
+Made predictions in 0.0300 seconds.
+F1 score for training set: 0.8153.
+F1 score for test set: 0.7983.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 200. . .
-Trained model in 0.0500 seconds
-Made predictions in 0.0350 seconds.
+Trained model in 0.0470 seconds
+Made predictions in 0.0340 seconds.
 Made predictions in 0.0320 seconds.
-F1 score for training set: 0.8063.
-F1 score for test set: 0.8141.
+F1 score for training set: 0.8012.
+F1 score for test set: 0.8100.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.1060 seconds
-Made predictions in 0.0680 seconds.
-Made predictions in 0.0270 seconds.
-F1 score for training set: 0.8266.
-F1 score for test set: 0.8133.
+Trained model in 0.0430 seconds
+Made predictions in 0.0640 seconds.
+Made predictions in 0.0290 seconds.
+F1 score for training set: 0.8319.
+F1 score for test set: 0.8378.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0490 seconds
+Trained model in 0.1040 seconds
 Made predictions in 0.0030 seconds.
-Made predictions in 0.0040 seconds.
+Made predictions in 0.0030 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7332.
+F1 score for test set: 0.7696.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0610 seconds
+Trained model in 0.0550 seconds
 Made predictions in 0.0040 seconds.
-Made predictions in 0.0040 seconds.
+Made predictions in 0.0030 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7200.
+F1 score for test set: 0.7345.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0580 seconds
+Trained model in 0.0550 seconds
+Made predictions in 0.0040 seconds.
 Made predictions in 0.0030 seconds.
-Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7231.
+F1 score for test set: 0.7576.
 ---------------------------------------
 </pre>
 </div>
@@ -834,7 +832,7 @@ F1 score for test set: 0.7231.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -879,7 +877,7 @@ F1 score for test set: 0.7231.
       <th>0</th>
       <td>SVC</td>
       <td>200.0</td>
-      <td>0.007</td>
+      <td>0.006</td>
       <td>0.006</td>
       <td>0.860841</td>
       <td>0.820513</td>
@@ -888,7 +886,7 @@ F1 score for test set: 0.7231.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.014</td>
+      <td>0.013</td>
       <td>0.004</td>
       <td>0.858388</td>
       <td>0.846154</td>
@@ -897,55 +895,55 @@ F1 score for test set: 0.7231.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.017</td>
-      <td>0.029</td>
-      <td>0.817610</td>
-      <td>0.800000</td>
+      <td>0.016</td>
+      <td>0.030</td>
+      <td>0.815287</td>
+      <td>0.798265</td>
     </tr>
     <tr>
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.035</td>
+      <td>0.034</td>
       <td>0.032</td>
-      <td>0.806250</td>
-      <td>0.814103</td>
+      <td>0.801242</td>
+      <td>0.809969</td>
     </tr>
     <tr>
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.068</td>
-      <td>0.027</td>
-      <td>0.826552</td>
-      <td>0.813333</td>
+      <td>0.064</td>
+      <td>0.029</td>
+      <td>0.831858</td>
+      <td>0.837838</td>
     </tr>
     <tr>
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
       <td>0.003</td>
-      <td>0.004</td>
+      <td>0.003</td>
       <td>1.000000</td>
-      <td>0.733167</td>
+      <td>0.769608</td>
     </tr>
     <tr>
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
       <td>0.004</td>
-      <td>0.004</td>
+      <td>0.003</td>
       <td>1.000000</td>
-      <td>0.720000</td>
+      <td>0.734545</td>
     </tr>
     <tr>
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
+      <td>0.004</td>
       <td>0.003</td>
-      <td>0.002</td>
       <td>1.000000</td>
-      <td>0.723077</td>
+      <td>0.757576</td>
     </tr>
   </tbody>
 </table>
