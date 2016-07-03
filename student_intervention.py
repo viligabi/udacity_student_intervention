@@ -27,7 +27,7 @@
 # ## Exploring the Data
 # Run the code cell below to load necessary Python libraries and load the student data. Note that the last column from this dataset, `'passed'`, will be our target label (whether the student graduated or didn't graduate). All other columns are features about each student.
 
-# In[59]:
+# In[4]:
 
 # Import libraries
 import numpy as np
@@ -49,7 +49,7 @@ print "Student data read successfully!"
 # - The graduation rate of the class, `grad_rate`, in percent (%).
 # 
 
-# In[60]:
+# In[5]:
 
 # TODO: Calculate number of students
 n_students = student_data.shape[0]
@@ -82,7 +82,7 @@ print "Graduation rate of the class: {:.2f}%".format(grad_rate)
 # 
 # Run the code cell below to separate the student data into feature and target columns to see if any features are non-numeric.
 
-# In[61]:
+# In[13]:
 
 # Extract feature columns
 feature_cols = list(student_data.columns[:-1])
@@ -97,7 +97,6 @@ print "\nTarget column: {}".format(target_col)
 # Separate the data into feature data and target data (X_all and y_all, respectively)
 X_all = student_data[feature_cols]
 y_all = student_data[target_col]
-y_all = y_all.replace(['yes', 'no'], [1, 0])
 
 # Show the feature information by printing the first five rows
 print "\nFeature values:"
@@ -112,7 +111,7 @@ print X_all.head()
 # 
 # These generated columns are sometimes called _dummy variables_, and we will use the [`pandas.get_dummies()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html?highlight=get_dummies#pandas.get_dummies) function to perform this transformation. Run the code cell below to perform the preprocessing routine discussed in this section.
 
-# In[64]:
+# In[14]:
 
 def preprocess_features(X):
     ''' Preprocesses the student data and converts non-numeric binary variables into
@@ -157,7 +156,7 @@ X_all = robust_scaler.fit_transform(X_all)
 #   - Set a `random_state` for the function(s) you use, if provided.
 #   - Store the results in `X_train`, `X_test`, `y_train`, and `y_test`.
 
-# In[65]:
+# In[15]:
 
 # TODO: Import any additional functionality you may need here
 from sklearn.cross_validation import train_test_split
@@ -191,7 +190,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # - `train_predict` - takes as input a classifier, and the training and testing data, and performs `train_clasifier` and `predict_labels`.
 #  - This function will report the F<sub>1</sub> score for both the training and testing data separately.
 
-# In[66]:
+# In[22]:
 
 def train_classifier(clf, X_train, y_train):
     ''' Fits a classifier to the training data. '''
@@ -216,7 +215,7 @@ def predict_labels(clf, features, target):
     prediction_time = end - start
     # Print and return results
     print "Made predictions in {:.4f} seconds.".format(prediction_time)
-    return [f1_score(target.values, y_pred), prediction_time]
+    return [f1_score(target.values, y_pred, pos_label="yes"), prediction_time]
 
 
 def train_predict(clf, X_train, y_train, X_test, y_test):
@@ -249,7 +248,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[67]:
+# In[23]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -303,7 +302,7 @@ for clf in [clf_A, clf_B, clf_C]:
     print "---------------------------------------"
 
 
-# In[68]:
+# In[11]:
 
 from IPython.display import display
 display(results)
@@ -360,7 +359,7 @@ display(results)
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[69]:
+# In[25]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
@@ -377,10 +376,10 @@ parameters = {
 clf = svm.SVC(kernel = 'rbf')
 
 # TODO: Make an f1 scoring function using 'make_scorer' 
-f1_scorer = make_scorer(f1_score)
+f1_scorer = make_scorer(f1_score, pos_label="yes")
 
 # TODO: Perform grid search on the classifier using the f1_scorer as the scoring method
-grid_obj = grid_search.GridSearchCV(clf, parameters, scoring= f1_scorer,cv=2)
+grid_obj = grid_search.GridSearchCV(clf, parameters, scoring=f1_scorer,cv=2)
 
 # TODO: Fit the grid search object to the training data and find the optimal parameters
 grid_obj = grid_obj.fit(X_train, y_train)

@@ -229,7 +229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -281,7 +281,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -344,7 +344,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -360,7 +360,6 @@ Graduation rate of the class: 67.09%
 <span class="c1"># Separate the data into feature data and target data (X_all and y_all, respectively)</span>
 <span class="n">X_all</span> <span class="o">=</span> <span class="n">student_data</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span>
 <span class="n">y_all</span> <span class="o">=</span> <span class="n">student_data</span><span class="p">[</span><span class="n">target_col</span><span class="p">]</span>
-<span class="n">y_all</span> <span class="o">=</span> <span class="n">y_all</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># Show the feature information by printing the first five rows</span>
 <span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Feature values:&quot;</span>
@@ -427,7 +426,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -475,25 +474,10 @@ Feature values:
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-64-89084db03ca1&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">     23</span>     <span class="ansigreen">return</span> output<span class="ansiyellow"></span>
-<span class="ansigreen">     24</span> <span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 25</span><span class="ansiyellow"> </span>X_all <span class="ansiyellow">=</span> preprocess_features<span class="ansiyellow">(</span>X_all<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     26</span> <span class="ansigreen">print</span> <span class="ansiblue">&quot;Processed feature columns ({} total features):\n{}&quot;</span><span class="ansiyellow">.</span>format<span class="ansiyellow">(</span>len<span class="ansiyellow">(</span>X_all<span class="ansiyellow">.</span>columns<span class="ansiyellow">)</span><span class="ansiyellow">,</span> list<span class="ansiyellow">(</span>X_all<span class="ansiyellow">.</span>columns<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     27</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">&lt;ipython-input-64-89084db03ca1&gt;</span> in <span class="ansicyan">preprocess_features</span><span class="ansiblue">(X)</span>
-<span class="ansigreen">      4</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      5</span>     <span class="ansired"># Initialize new output DataFrame</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 6</span><span class="ansiyellow">     </span>output <span class="ansiyellow">=</span> pd<span class="ansiyellow">.</span>DataFrame<span class="ansiyellow">(</span>index <span class="ansiyellow">=</span> X<span class="ansiyellow">.</span>index<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      7</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      8</span>     <span class="ansired"># Investigate each feature column for the data</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-
-<span class="ansired">AttributeError</span>: &apos;numpy.ndarray&apos; object has no attribute &apos;index&apos;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processed feature columns (48 total features):
+[&apos;school_GP&apos;, &apos;school_MS&apos;, &apos;sex_F&apos;, &apos;sex_M&apos;, &apos;age&apos;, &apos;address_R&apos;, &apos;address_U&apos;, &apos;famsize_GT3&apos;, &apos;famsize_LE3&apos;, &apos;Pstatus_A&apos;, &apos;Pstatus_T&apos;, &apos;Medu&apos;, &apos;Fedu&apos;, &apos;Mjob_at_home&apos;, &apos;Mjob_health&apos;, &apos;Mjob_other&apos;, &apos;Mjob_services&apos;, &apos;Mjob_teacher&apos;, &apos;Fjob_at_home&apos;, &apos;Fjob_health&apos;, &apos;Fjob_other&apos;, &apos;Fjob_services&apos;, &apos;Fjob_teacher&apos;, &apos;reason_course&apos;, &apos;reason_home&apos;, &apos;reason_other&apos;, &apos;reason_reputation&apos;, &apos;guardian_father&apos;, &apos;guardian_mother&apos;, &apos;guardian_other&apos;, &apos;traveltime&apos;, &apos;studytime&apos;, &apos;failures&apos;, &apos;schoolsup&apos;, &apos;famsup&apos;, &apos;paid&apos;, &apos;activities&apos;, &apos;nursery&apos;, &apos;higher&apos;, &apos;internet&apos;, &apos;romantic&apos;, &apos;famrel&apos;, &apos;freetime&apos;, &apos;goout&apos;, &apos;Dalc&apos;, &apos;Walc&apos;, &apos;health&apos;, &apos;absences&apos;]
+</pre>
 </div>
 </div>
 
@@ -521,7 +505,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -611,7 +595,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -637,7 +621,7 @@ Testing set has 95 samples.
     <span class="n">prediction_time</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
     <span class="c1"># Print and return results</span>
     <span class="k">print</span> <span class="s2">&quot;Made predictions in {:.4f} seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prediction_time</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">f1_score</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="n">prediction_time</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">f1_score</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">),</span> <span class="n">prediction_time</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">train_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
@@ -690,7 +674,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -768,7 +752,7 @@ Testing set has 95 samples.
 Training a SVC using a training set size of 100. . .
 Trained model in 0.0030 seconds
 Made predictions in 0.0020 seconds.
-Made predictions in 0.0040 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8609.
 F1 score for test set: 0.8093.
 ---------------------------------------
@@ -781,52 +765,52 @@ F1 score for test set: 0.8243.
 ---------------------------------------
 Training a SVC using a training set size of 300. . .
 Trained model in 0.0170 seconds
-Made predictions in 0.0130 seconds.
+Made predictions in 0.0120 seconds.
 Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8298.
 F1 score for test set: 0.8497.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0470 seconds
-Made predictions in 0.0160 seconds.
-Made predictions in 0.0280 seconds.
-F1 score for training set: 0.8378.
-F1 score for test set: 0.7865.
+Trained model in 0.0380 seconds
+Made predictions in 0.0130 seconds.
+Made predictions in 0.0240 seconds.
+F1 score for training set: 0.8052.
+F1 score for test set: 0.7940.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 200. . .
-Trained model in 0.0520 seconds
-Made predictions in 0.0400 seconds.
-Made predictions in 0.0340 seconds.
-F1 score for training set: 0.8350.
-F1 score for test set: 0.8039.
+Trained model in 0.0410 seconds
+Made predictions in 0.0320 seconds.
+Made predictions in 0.0290 seconds.
+F1 score for training set: 0.8360.
+F1 score for test set: 0.8170.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.0420 seconds
-Made predictions in 0.0730 seconds.
-Made predictions in 0.0340 seconds.
-F1 score for training set: 0.8190.
-F1 score for test set: 0.8553.
+Trained model in 0.0360 seconds
+Made predictions in 0.0590 seconds.
+Made predictions in 0.0240 seconds.
+F1 score for training set: 0.8283.
+F1 score for test set: 0.8456.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0490 seconds
-Made predictions in 0.0020 seconds.
-Made predictions in 0.0020 seconds.
+Trained model in 0.0470 seconds
+Made predictions in 0.0030 seconds.
+Made predictions in 0.0030 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7085.
+F1 score for test set: 0.7107.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0550 seconds
+Trained model in 0.0470 seconds
 Made predictions in 0.0030 seconds.
 Made predictions in 0.0030 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7273.
+F1 score for test set: 0.6718.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0620 seconds
-Made predictions in 0.0040 seconds.
+Trained model in 0.0550 seconds
 Made predictions in 0.0030 seconds.
+Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
-F1 score for test set: 0.7023.
+F1 score for test set: 0.7164.
 ---------------------------------------
 </pre>
 </div>
@@ -838,7 +822,7 @@ F1 score for test set: 0.7023.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -875,7 +859,7 @@ F1 score for test set: 0.7023.
       <td>SVC</td>
       <td>100.0</td>
       <td>0.002</td>
-      <td>0.004</td>
+      <td>0.005</td>
       <td>0.860927</td>
       <td>0.809322</td>
     </tr>
@@ -883,8 +867,8 @@ F1 score for test set: 0.7023.
       <th>0</th>
       <td>SVC</td>
       <td>200.0</td>
-      <td>0.006</td>
-      <td>0.006</td>
+      <td>0.005</td>
+      <td>0.005</td>
       <td>0.838710</td>
       <td>0.824281</td>
     </tr>
@@ -892,7 +876,7 @@ F1 score for test set: 0.7023.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.013</td>
+      <td>0.011</td>
       <td>0.004</td>
       <td>0.829787</td>
       <td>0.849673</td>
@@ -901,28 +885,28 @@ F1 score for test set: 0.7023.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.016</td>
-      <td>0.028</td>
-      <td>0.837838</td>
-      <td>0.786517</td>
+      <td>0.014</td>
+      <td>0.024</td>
+      <td>0.797468</td>
+      <td>0.779736</td>
     </tr>
     <tr>
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.040</td>
-      <td>0.034</td>
-      <td>0.834951</td>
-      <td>0.803922</td>
+      <td>0.032</td>
+      <td>0.032</td>
+      <td>0.817610</td>
+      <td>0.814103</td>
     </tr>
     <tr>
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.073</td>
-      <td>0.034</td>
-      <td>0.818966</td>
-      <td>0.855263</td>
+      <td>0.055</td>
+      <td>0.024</td>
+      <td>0.826840</td>
+      <td>0.834437</td>
     </tr>
     <tr>
       <th>0</th>
@@ -931,25 +915,25 @@ F1 score for test set: 0.7023.
       <td>0.002</td>
       <td>0.002</td>
       <td>1.000000</td>
-      <td>0.708543</td>
+      <td>0.685139</td>
     </tr>
     <tr>
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
-      <td>0.003</td>
-      <td>0.003</td>
+      <td>0.002</td>
+      <td>0.002</td>
       <td>1.000000</td>
-      <td>0.727273</td>
+      <td>0.726619</td>
     </tr>
     <tr>
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
-      <td>0.004</td>
-      <td>0.003</td>
+      <td>0.002</td>
+      <td>0.002</td>
       <td>1.000000</td>
-      <td>0.702290</td>
+      <td>0.661290</td>
     </tr>
   </tbody>
 </table>
@@ -1159,7 +1143,7 @@ F1 score for test set: 0.7023.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;gridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -1177,10 +1161,10 @@ F1 score for test set: 0.7023.
 <span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s1">&#39;rbf&#39;</span><span class="p">)</span>
 
 <span class="c1"># TODO: Make an f1 scoring function using &#39;make_scorer&#39; </span>
-<span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">)</span>
+<span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">)</span>
 
 <span class="c1"># TODO: Perform grid search on the classifier using the f1_scorer as the scoring method</span>
-<span class="n">grid_obj</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span> <span class="n">f1_scorer</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">grid_obj</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">f1_scorer</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># TODO: Fit the grid search object to the training data and find the optimal parameters</span>
 <span class="n">grid_obj</span> <span class="o">=</span> <span class="n">grid_obj</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1205,8 +1189,8 @@ F1 score for test set: 0.7023.
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0110 seconds.
-Made predictions in 0.0040 seconds.
+<pre>Made predictions in 0.0130 seconds.
+Made predictions in 0.0050 seconds.
 Tuned model has a training F1 score of 0.8678.
 Tuned model has a testing F1 score of 0.8497.
 </pre>
