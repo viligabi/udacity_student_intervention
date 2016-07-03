@@ -184,11 +184,20 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # **Answer: **
 # 
 # **SVM**: 
-# 
+# Pro:
 # * Separates data using linear function (fast predictions)
 # * Maximalizes margin (helps to avoid overfitting)
 # * Using kernel trick (enriching data dimensions) it can solve highly complex issues
+# Con:
+# * Goodness is highly depending on the chosen kernel function (different datasets may need different kernel function)
 # 
+# **Ensemble**:
+# Pro:
+# * using random subsets of data (bagging) creating rules (weak learning), summing up the "subrules" we can create complex rules on dataset
+# * using these complex rules the error rate can be kept relatively low (no overfitting), and
+# * high dimensional data can be handled quite well
+# Con:
+# * using too many rules, the training and prediction times might be too much
 
 # ### Setup
 # Run the code cell below to initialize three helper functions which you can use for training and testing the three supervised learning models you've chosen above. The functions are as follows:
@@ -255,7 +264,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[26]:
+# In[30]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -309,7 +318,7 @@ for clf in [clf_A, clf_B, clf_C]:
     print "---------------------------------------"
 
 
-# In[11]:
+# In[31]:
 
 from IPython.display import display
 display(results)
