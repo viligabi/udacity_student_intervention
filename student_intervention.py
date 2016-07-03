@@ -182,6 +182,13 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # *List three supervised learning models that are appropriate for this problem. What are the general applications of each model? What are their strengths and weaknesses? Given what you know about the data, why did you choose these models to be applied?*
 
 # **Answer: **
+# 
+# **SVM**: 
+# 
+# * Separates data using linear function (fast predictions)
+# * Maximalizes margin (helps to avoid overfitting)
+# * Using kernel trick (enriching data dimensions) it can solve highly complex issues
+# 
 
 # ### Setup
 # Run the code cell below to initialize three helper functions which you can use for training and testing the three supervised learning models you've chosen above. The functions are as follows:
@@ -248,7 +255,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[23]:
+# In[26]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -262,7 +269,7 @@ from sklearn.ensemble import ExtraTreesClassifier
 
 # TODO: Initialize the three models
 clf_A = svm.SVC()
-clf_B = BaggingClassifier(KNeighborsClassifier(), max_samples=0.5, max_features=0.5)
+clf_B = BaggingClassifier(KNeighborsClassifier())
 clf_C = ExtraTreesClassifier()
 
 # TODO: Set up the training set sizes
