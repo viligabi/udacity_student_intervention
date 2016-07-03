@@ -27,7 +27,7 @@
 # ## Exploring the Data
 # Run the code cell below to load necessary Python libraries and load the student data. Note that the last column from this dataset, `'passed'`, will be our target label (whether the student graduated or didn't graduate). All other columns are features about each student.
 
-# In[27]:
+# In[59]:
 
 # Import libraries
 import numpy as np
@@ -49,7 +49,7 @@ print "Student data read successfully!"
 # - The graduation rate of the class, `grad_rate`, in percent (%).
 # 
 
-# In[28]:
+# In[60]:
 
 # TODO: Calculate number of students
 n_students = student_data.shape[0]
@@ -82,7 +82,7 @@ print "Graduation rate of the class: {:.2f}%".format(grad_rate)
 # 
 # Run the code cell below to separate the student data into feature and target columns to see if any features are non-numeric.
 
-# In[29]:
+# In[61]:
 
 # Extract feature columns
 feature_cols = list(student_data.columns[:-1])
@@ -112,7 +112,7 @@ print X_all.head()
 # 
 # These generated columns are sometimes called _dummy variables_, and we will use the [`pandas.get_dummies()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html?highlight=get_dummies#pandas.get_dummies) function to perform this transformation. Run the code cell below to perform the preprocessing routine discussed in this section.
 
-# In[30]:
+# In[64]:
 
 def preprocess_features(X):
     ''' Preprocesses the student data and converts non-numeric binary variables into
@@ -140,9 +140,14 @@ def preprocess_features(X):
 
 X_all = preprocess_features(X_all)
 print "Processed feature columns ({} total features):\n{}".format(len(X_all.columns), list(X_all.columns))
-X_all.describe()
-#y_all = y_all.replace(['yes', 'no'], [1, 0])
-y_all.head()
+
+X_all.head()
+#y_all.head()
+
+# Scaling the data
+from sklearn.preprocessing import RobustScaler
+robust_scaler = RobustScaler()
+X_all = robust_scaler.fit_transform(X_all)
 
 
 # ### Implementation: Training and Testing Data Split
@@ -152,7 +157,7 @@ y_all.head()
 #   - Set a `random_state` for the function(s) you use, if provided.
 #   - Store the results in `X_train`, `X_test`, `y_train`, and `y_test`.
 
-# In[31]:
+# In[65]:
 
 # TODO: Import any additional functionality you may need here
 from sklearn.cross_validation import train_test_split
@@ -186,7 +191,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # - `train_predict` - takes as input a classifier, and the training and testing data, and performs `train_clasifier` and `predict_labels`.
 #  - This function will report the F<sub>1</sub> score for both the training and testing data separately.
 
-# In[32]:
+# In[66]:
 
 def train_classifier(clf, X_train, y_train):
     ''' Fits a classifier to the training data. '''
@@ -244,7 +249,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[33]:
+# In[67]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -298,7 +303,7 @@ for clf in [clf_A, clf_B, clf_C]:
     print "---------------------------------------"
 
 
-# In[34]:
+# In[68]:
 
 from IPython.display import display
 display(results)
@@ -355,7 +360,7 @@ display(results)
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[26]:
+# In[69]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
