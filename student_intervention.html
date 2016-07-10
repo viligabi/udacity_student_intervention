@@ -705,7 +705,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -781,65 +781,65 @@ Training set has 300 samples.
 Testing set has 95 samples.
 ---------------------------------------
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0010 seconds
-Made predictions in 0.0010 seconds.
+Trained model in 0.0030 seconds
 Made predictions in 0.0020 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8609.
 F1 score for test set: 0.8093.
 ---------------------------------------
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0030 seconds
-Made predictions in 0.0020 seconds.
-Made predictions in 0.0030 seconds.
+Trained model in 0.0090 seconds
+Made predictions in 0.0060 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8387.
 F1 score for test set: 0.8243.
 ---------------------------------------
 Training a SVC using a training set size of 300. . .
-Trained model in 0.0070 seconds
-Made predictions in 0.0050 seconds.
-Made predictions in 0.0020 seconds.
+Trained model in 0.0170 seconds
+Made predictions in 0.0120 seconds.
+Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8298.
 F1 score for test set: 0.8497.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0190 seconds
-Made predictions in 0.0140 seconds.
-Made predictions in 0.0310 seconds.
+Trained model in 0.0460 seconds
+Made predictions in 0.0330 seconds.
+Made predictions in 0.0840 seconds.
 F1 score for training set: 0.8592.
 F1 score for test set: 0.7470.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 200. . .
-Trained model in 0.0190 seconds
-Made predictions in 0.0410 seconds.
-Made predictions in 0.0420 seconds.
+Trained model in 0.0730 seconds
+Made predictions in 0.1430 seconds.
+Made predictions in 0.1100 seconds.
 F1 score for training set: 0.8383.
 F1 score for test set: 0.8133.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.0220 seconds
-Made predictions in 0.0960 seconds.
-Made predictions in 0.0350 seconds.
+Trained model in 0.0640 seconds
+Made predictions in 0.2290 seconds.
+Made predictions in 0.0850 seconds.
 F1 score for training set: 0.8353.
 F1 score for test set: 0.7801.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0270 seconds
-Made predictions in 0.0010 seconds.
-Made predictions in 0.0020 seconds.
+Trained model in 0.0540 seconds
+Made predictions in 0.0030 seconds.
+Made predictions in 0.0120 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7071.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0290 seconds
-Made predictions in 0.0020 seconds.
-Made predictions in 0.0020 seconds.
+Trained model in 0.0690 seconds
+Made predictions in 0.0030 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7482.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0260 seconds
-Made predictions in 0.0010 seconds.
-Made predictions in 0.0010 seconds.
+Trained model in 0.0640 seconds
+Made predictions in 0.0030 seconds.
+Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.6866.
 ---------------------------------------
@@ -863,7 +863,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -899,8 +899,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>100.0</td>
-      <td>0.001</td>
       <td>0.002</td>
+      <td>0.005</td>
       <td>0.860927</td>
       <td>0.809322</td>
     </tr>
@@ -908,8 +908,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>200.0</td>
-      <td>0.002</td>
-      <td>0.003</td>
+      <td>0.006</td>
+      <td>0.005</td>
       <td>0.838710</td>
       <td>0.824281</td>
     </tr>
@@ -917,8 +917,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.005</td>
-      <td>0.002</td>
+      <td>0.012</td>
+      <td>0.004</td>
       <td>0.829787</td>
       <td>0.849673</td>
     </tr>
@@ -926,8 +926,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.014</td>
-      <td>0.031</td>
+      <td>0.033</td>
+      <td>0.084</td>
       <td>0.859155</td>
       <td>0.747045</td>
     </tr>
@@ -935,8 +935,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.041</td>
-      <td>0.042</td>
+      <td>0.143</td>
+      <td>0.110</td>
       <td>0.838284</td>
       <td>0.813333</td>
     </tr>
@@ -944,8 +944,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.096</td>
-      <td>0.035</td>
+      <td>0.229</td>
+      <td>0.085</td>
       <td>0.835267</td>
       <td>0.780142</td>
     </tr>
@@ -953,8 +953,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
-      <td>0.001</td>
-      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.012</td>
       <td>1.000000</td>
       <td>0.707071</td>
     </tr>
@@ -962,8 +962,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
-      <td>0.002</td>
-      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.005</td>
       <td>1.000000</td>
       <td>0.748201</td>
     </tr>
@@ -971,8 +971,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
-      <td>0.001</td>
-      <td>0.001</td>
+      <td>0.003</td>
+      <td>0.002</td>
       <td>1.000000</td>
       <td>0.686567</td>
     </tr>
@@ -999,7 +999,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;SVC&quot;</span><span class="p">]</span>
@@ -1013,7 +1013,7 @@ F1 score for test set: 0.6866.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1034,8 +1034,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>100.0</td>
-      <td>0.001</td>
       <td>0.002</td>
+      <td>0.005</td>
       <td>0.860927</td>
       <td>0.809322</td>
     </tr>
@@ -1043,8 +1043,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>200.0</td>
-      <td>0.002</td>
-      <td>0.003</td>
+      <td>0.006</td>
+      <td>0.005</td>
       <td>0.838710</td>
       <td>0.824281</td>
     </tr>
@@ -1052,8 +1052,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.005</td>
-      <td>0.002</td>
+      <td>0.012</td>
+      <td>0.004</td>
       <td>0.829787</td>
       <td>0.849673</td>
     </tr>
@@ -1080,7 +1080,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;BaggingClassifier&quot;</span><span class="p">]</span>
@@ -1094,7 +1094,7 @@ F1 score for test set: 0.6866.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1115,8 +1115,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.014</td>
-      <td>0.031</td>
+      <td>0.033</td>
+      <td>0.084</td>
       <td>0.859155</td>
       <td>0.747045</td>
     </tr>
@@ -1124,8 +1124,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.041</td>
-      <td>0.042</td>
+      <td>0.143</td>
+      <td>0.110</td>
       <td>0.838284</td>
       <td>0.813333</td>
     </tr>
@@ -1133,8 +1133,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.096</td>
-      <td>0.035</td>
+      <td>0.229</td>
+      <td>0.085</td>
       <td>0.835267</td>
       <td>0.780142</td>
     </tr>
@@ -1161,7 +1161,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;ExtraTreesClassifier&quot;</span><span class="p">]</span>
@@ -1175,7 +1175,7 @@ F1 score for test set: 0.6866.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1196,8 +1196,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
-      <td>0.001</td>
-      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.012</td>
       <td>1.0</td>
       <td>0.707071</td>
     </tr>
@@ -1205,8 +1205,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
-      <td>0.002</td>
-      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.005</td>
       <td>1.0</td>
       <td>0.748201</td>
     </tr>
@@ -1214,8 +1214,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
-      <td>0.001</td>
-      <td>0.001</td>
+      <td>0.003</td>
+      <td>0.002</td>
       <td>1.0</td>
       <td>0.686567</td>
     </tr>
@@ -1321,7 +1321,7 @@ The predicition time remained more or less the same as it was by 100 samples in 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;gridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -1361,6 +1361,23 @@ The predicition time remained more or less the same as it was by 100 samples in 
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Made predictions in 0.0140 seconds.
+Made predictions in 0.0040 seconds.
+Tuned model has a training F1 score of 0.8678.
+Tuned model has a testing F1 score of 0.8497.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1378,6 +1395,8 @@ The predicition time remained more or less the same as it was by 100 samples in 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<p>Due low data availability (395 datapoints) the tuned model cannot perform much better. (same score as untuned)
+Later on, when more data will be available most probably with correct tuning parameters the model can perform even better than the untuned one.</p>
 
 </div>
 </div>
@@ -1393,32 +1412,6 @@ The predicition time remained more or less the same as it was by 100 samples in 
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>

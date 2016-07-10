@@ -277,7 +277,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[10]:
+# In[7]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -334,7 +334,7 @@ for clf in [clf_A, clf_B, clf_C]:
 # ### Tabular Results
 # Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
 
-# In[32]:
+# In[8]:
 
 from IPython.display import display
 display(results)
@@ -342,21 +342,21 @@ display(results)
 
 # ***Classifer 1 - SVC***
 
-# In[33]:
+# In[9]:
 
 results[results.Classifier=="SVC"]
 
 
 # ***Classifer 2 - Ensemble***
 
-# In[34]:
+# In[10]:
 
 results[results.Classifier=="BaggingClassifier"]
 
 
 # ***Classifer 3 - ExtraTreesClassifier***
 
-# In[35]:
+# In[11]:
 
 results[results.Classifier=="ExtraTreesClassifier"]
 
@@ -406,7 +406,7 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[ ]:
+# In[12]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
@@ -445,16 +445,9 @@ print "Tuned model has a testing F1 score of {:.4f}.".format(f1_test)
 # *What is the final model's F<sub>1</sub> score for training and testing? How does that score compare to the untuned model?*
 
 # **Answer: **
+# 
+# Due low data availability (395 datapoints) the tuned model cannot perform much better. (same score as untuned)
+# Later on, when more data will be available most probably with correct tuning parameters the model can perform even better than the untuned one.
 
 # > **Note**: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  
 # **File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission.
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
