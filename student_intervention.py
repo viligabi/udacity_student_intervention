@@ -20,14 +20,14 @@
 # 
 # **1. Regression**: if the interesting information for us if _how_ well will perform the student on the final exam (i.e. 1 to 10 scale) or what is the chance that the student will not pass on the final exam.
 # 
-# **2. Classification**: it can be used if we want to setup classes, like grade (A, B, C etc.) or will/won't pass
+# **2. Classification**: can be used if we want to setup classes, like grade (A, B, C etc.) or will/won't pass
 # 
-# In this particular case the goal is to select the student by whom the intervention is needed in order to pass on the final exam. The outcome should be binary (intervention needed / not needed), therefore I would go for the classification.
+# In this particular case the goal is to select the student by whom the intervention is needed in order to pass on the final exam. The outcome should be binary (intervention needed / not needed), therefore I'll go for the classification.
 
 # ## Exploring the Data
 # Run the code cell below to load necessary Python libraries and load the student data. Note that the last column from this dataset, `'passed'`, will be our target label (whether the student graduated or didn't graduate). All other columns are features about each student.
 
-# In[4]:
+# In[3]:
 
 # Import libraries
 import numpy as np
@@ -49,7 +49,7 @@ print "Student data read successfully!"
 # - The graduation rate of the class, `grad_rate`, in percent (%).
 # 
 
-# In[5]:
+# In[4]:
 
 # TODO: Calculate number of students
 n_students = student_data.shape[0]
@@ -82,7 +82,7 @@ print "Graduation rate of the class: {:.2f}%".format(grad_rate)
 # 
 # Run the code cell below to separate the student data into feature and target columns to see if any features are non-numeric.
 
-# In[13]:
+# In[5]:
 
 # Extract feature columns
 feature_cols = list(student_data.columns[:-1])
@@ -111,7 +111,7 @@ print X_all.head()
 # 
 # These generated columns are sometimes called _dummy variables_, and we will use the [`pandas.get_dummies()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html?highlight=get_dummies#pandas.get_dummies) function to perform this transformation. Run the code cell below to perform the preprocessing routine discussed in this section.
 
-# In[14]:
+# In[6]:
 
 def preprocess_features(X):
     ''' Preprocesses the student data and converts non-numeric binary variables into
@@ -156,7 +156,7 @@ X_all = robust_scaler.fit_transform(X_all)
 #   - Set a `random_state` for the function(s) you use, if provided.
 #   - Store the results in `X_train`, `X_test`, `y_train`, and `y_test`.
 
-# In[15]:
+# In[7]:
 
 # TODO: Import any additional functionality you may need here
 from sklearn.cross_validation import train_test_split
@@ -203,6 +203,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # Con:
 # * using too many rules, the training and prediction times might be too much
 # 
+# 
 # **Decision Tree**:
 # 
 # Pro:
@@ -218,7 +219,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # - `train_predict` - takes as input a classifier, and the training and testing data, and performs `train_clasifier` and `predict_labels`.
 #  - This function will report the F<sub>1</sub> score for both the training and testing data separately.
 
-# In[22]:
+# In[1]:
 
 def train_classifier(clf, X_train, y_train):
     ''' Fits a classifier to the training data. '''
@@ -276,7 +277,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[30]:
+# In[2]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -330,7 +331,7 @@ for clf in [clf_A, clf_B, clf_C]:
     print "---------------------------------------"
 
 
-# In[31]:
+# In[3]:
 
 from IPython.display import display
 display(results)
@@ -387,7 +388,7 @@ display(results)
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[25]:
+# In[4]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
@@ -429,3 +430,13 @@ print "Tuned model has a testing F1 score of {:.4f}.".format(f1_test)
 
 # > **Note**: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  
 # **File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission.
+
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
+

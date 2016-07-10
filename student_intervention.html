@@ -211,8 +211,8 @@ div#notebook {
 <p><strong>Answer: </strong></p>
 <p>The problem can be solved generally two ways:</p>
 <p><strong>1. Regression</strong>: if the interesting information for us if <em>how</em> well will perform the student on the final exam (i.e. 1 to 10 scale) or what is the chance that the student will not pass on the final exam.</p>
-<p><strong>2. Classification</strong>: it can be used if we want to setup classes, like grade (A, B, C etc.) or will/won't pass</p>
-<p>In this particular case the goal is to select the student by whom the intervention is needed in order to pass on the final exam. The outcome should be binary (intervention needed / not needed), therefore I would go for the classification.</p>
+<p><strong>2. Classification</strong>: can be used if we want to setup classes, like grade (A, B, C etc.) or will/won't pass</p>
+<p>In this particular case the goal is to select the student by whom the intervention is needed in order to pass on the final exam. The outcome should be binary (intervention needed / not needed), therefore I'll go for the classification.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -281,7 +281,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -344,7 +344,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -426,7 +426,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -505,7 +505,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -626,7 +626,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -705,7 +705,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -769,81 +769,18 @@ Testing set has 95 samples.
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>set has 395 samples.
-Training set has 100 samples.
-Testing set has 295 samples.
----------------------------------------
-Training set has 200 samples.
-Testing set has 195 samples.
----------------------------------------
-Training set has 300 samples.
-Testing set has 95 samples.
----------------------------------------
-Training a SVC using a training set size of 100. . .
-Trained model in 0.0030 seconds
-Made predictions in 0.0020 seconds.
-Made predictions in 0.0050 seconds.
-F1 score for training set: 0.8609.
-F1 score for test set: 0.8093.
----------------------------------------
-Training a SVC using a training set size of 200. . .
-Trained model in 0.0090 seconds
-Made predictions in 0.0050 seconds.
-Made predictions in 0.0060 seconds.
-F1 score for training set: 0.8387.
-F1 score for test set: 0.8243.
----------------------------------------
-Training a SVC using a training set size of 300. . .
-Trained model in 0.0170 seconds
-Made predictions in 0.0120 seconds.
-Made predictions in 0.0040 seconds.
-F1 score for training set: 0.8298.
-F1 score for test set: 0.8497.
----------------------------------------
-Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0420 seconds
-Made predictions in 0.0300 seconds.
-Made predictions in 0.0760 seconds.
-F1 score for training set: 0.8356.
-F1 score for test set: 0.7790.
----------------------------------------
-Training a BaggingClassifier using a training set size of 200. . .
-Trained model in 0.0460 seconds
-Made predictions in 0.0900 seconds.
-Made predictions in 0.0920 seconds.
-F1 score for training set: 0.8515.
-F1 score for test set: 0.7622.
----------------------------------------
-Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.0540 seconds
-Made predictions in 0.2020 seconds.
-Made predictions in 0.0650 seconds.
-F1 score for training set: 0.8235.
-F1 score for test set: 0.8082.
----------------------------------------
-Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0420 seconds
-Made predictions in 0.0020 seconds.
-Made predictions in 0.0020 seconds.
-F1 score for training set: 1.0000.
-F1 score for test set: 0.6943.
----------------------------------------
-Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0440 seconds
-Made predictions in 0.0030 seconds.
-Made predictions in 0.0030 seconds.
-F1 score for training set: 1.0000.
-F1 score for test set: 0.7231.
----------------------------------------
-Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0550 seconds
-Made predictions in 0.0030 seconds.
-Made predictions in 0.0020 seconds.
-F1 score for training set: 1.0000.
-F1 score for test set: 0.7597.
----------------------------------------
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-2-bf3ca98c8e44&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">     16</span> <span class="ansired"># TODO: Set up the training set sizes</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">     17</span> num_train <span class="ansiyellow">=</span> <span class="ansicyan">100.</span><span class="ansiyellow"></span>
+<span class="ansigreen">---&gt; 18</span><span class="ansiyellow"> </span>num_test <span class="ansiyellow">=</span> X_all<span class="ansiyellow">.</span>shape<span class="ansiyellow">[</span><span class="ansicyan">0</span><span class="ansiyellow">]</span> <span class="ansiyellow">-</span> num_train<span class="ansiyellow"></span>
+<span class="ansigreen">     19</span> <span class="ansigreen">print</span> <span class="ansiblue">&quot;set has {} samples.&quot;</span><span class="ansiyellow">.</span>format<span class="ansiyellow">(</span>X_all<span class="ansiyellow">.</span>shape<span class="ansiyellow">[</span><span class="ansicyan">0</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">     20</span> X_train_100<span class="ansiyellow">,</span> X_test_100<span class="ansiyellow">,</span> y_train_100<span class="ansiyellow">,</span> y_test_100 <span class="ansiyellow">=</span> train_test_split<span class="ansiyellow">(</span>X_all<span class="ansiyellow">,</span> y_all<span class="ansiyellow">,</span> test_size<span class="ansiyellow">=</span><span class="ansiyellow">(</span>num_test<span class="ansiyellow">/</span>X_all<span class="ansiyellow">.</span>shape<span class="ansiyellow">[</span><span class="ansicyan">0</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow">,</span> random_state<span class="ansiyellow">=</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+
+<span class="ansired">NameError</span>: name &apos;X_all&apos; is not defined</pre>
 </div>
 </div>
 
@@ -853,7 +790,7 @@ F1 score for test set: 0.7597.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -869,108 +806,16 @@ F1 score for test set: 0.7597.
 
 
 <div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-3-153a2876f695&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      1</span> <span class="ansigreen">from</span> IPython<span class="ansiyellow">.</span>display <span class="ansigreen">import</span> display<span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>display<span class="ansiyellow">(</span>results<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<div class="output_html rendered_html output_subarea ">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Classifier</th>
-      <th>Training Set Size</th>
-      <th>Prediction Time (train)</th>
-      <th>Prediction Time (test)</th>
-      <th>F1 Score (train)</th>
-      <th>F1 Score (test)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>SVC</td>
-      <td>100.0</td>
-      <td>0.002</td>
-      <td>0.005</td>
-      <td>0.860927</td>
-      <td>0.809322</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>SVC</td>
-      <td>200.0</td>
-      <td>0.005</td>
-      <td>0.006</td>
-      <td>0.838710</td>
-      <td>0.824281</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>SVC</td>
-      <td>300.0</td>
-      <td>0.012</td>
-      <td>0.004</td>
-      <td>0.829787</td>
-      <td>0.849673</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>BaggingClassifier</td>
-      <td>100.0</td>
-      <td>0.030</td>
-      <td>0.076</td>
-      <td>0.835616</td>
-      <td>0.779043</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>BaggingClassifier</td>
-      <td>200.0</td>
-      <td>0.090</td>
-      <td>0.092</td>
-      <td>0.851485</td>
-      <td>0.762238</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>BaggingClassifier</td>
-      <td>300.0</td>
-      <td>0.202</td>
-      <td>0.065</td>
-      <td>0.823529</td>
-      <td>0.808219</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>ExtraTreesClassifier</td>
-      <td>100.0</td>
-      <td>0.002</td>
-      <td>0.002</td>
-      <td>1.000000</td>
-      <td>0.694301</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>ExtraTreesClassifier</td>
-      <td>200.0</td>
-      <td>0.003</td>
-      <td>0.003</td>
-      <td>1.000000</td>
-      <td>0.723077</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>ExtraTreesClassifier</td>
-      <td>300.0</td>
-      <td>0.003</td>
-      <td>0.002</td>
-      <td>1.000000</td>
-      <td>0.759690</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansired">NameError</span>: name &apos;results&apos; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -1174,7 +1019,7 @@ F1 score for test set: 0.7597.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;gridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -1219,12 +1064,18 @@ F1 score for test set: 0.7597.
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0130 seconds.
-Made predictions in 0.0050 seconds.
-Tuned model has a training F1 score of 0.8678.
-Tuned model has a testing F1 score of 0.8497.
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-4-baabe21ae451&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      6</span> <span class="ansired"># TODO: Create the parameters list you wish to tune</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">      7</span> parameters = {
+<span class="ansigreen">----&gt; 8</span><span class="ansiyellow">     </span><span class="ansiblue">&apos;C&apos;</span><span class="ansiyellow">:</span>np<span class="ansiyellow">.</span>logspace<span class="ansiyellow">(</span><span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">,</span> <span class="ansicyan">0.5</span><span class="ansiyellow">,</span> num<span class="ansiyellow">=</span><span class="ansicyan">10</span><span class="ansiyellow">)</span><span class="ansiyellow">,</span><span class="ansiyellow"></span>
+<span class="ansigreen">      9</span>     <span class="ansiblue">&apos;gamma&apos;</span><span class="ansiyellow">:</span> np<span class="ansiyellow">.</span>logspace<span class="ansiyellow">(</span><span class="ansiyellow">-</span><span class="ansicyan">2</span><span class="ansiyellow">,</span> <span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">,</span> num<span class="ansiyellow">=</span><span class="ansicyan">10</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">     10</span> }
+
+<span class="ansired">NameError</span>: name &apos;np&apos; is not defined</pre>
 </div>
 </div>
 
@@ -1263,6 +1114,32 @@ Tuned model has a testing F1 score of 0.8497.
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
