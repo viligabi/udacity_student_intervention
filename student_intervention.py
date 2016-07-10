@@ -334,7 +334,7 @@ for clf in [clf_A, clf_B, clf_C]:
 # ### Tabular Results
 # Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
 
-# In[11]:
+# In[32]:
 
 from IPython.display import display
 display(results)
@@ -342,21 +342,21 @@ display(results)
 
 # ***Classifer 1 - SVC***
 
-# In[31]:
+# In[33]:
 
 results[results.Classifier=="SVC"]
 
 
 # ***Classifer 2 - Ensemble***
 
-# In[27]:
+# In[34]:
 
 results[results.Classifier=="BaggingClassifier"]
 
 
 # ***Classifer 3 - ExtraTreesClassifier***
 
-# In[28]:
+# In[35]:
 
 results[results.Classifier=="ExtraTreesClassifier"]
 
@@ -368,6 +368,19 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # *Based on the experiments you performed earlier, in one to two paragraphs, explain to the board of supervisors what single model you chose as the best model. Which model is generally the most appropriate based on the available data, limited resources, cost, and performance?*
 
 # **Answer: **
+# 
+# During the rating I'm going to consider the training set size, prediction time and F1 score on test set, since the goal is to predict the unseen data with the lowest cost and fastest way.
+# 
+# 
+# Using 100 samples to train the prediction time with SVC and decision tree classifiers were equally fast, though the F1 score is ~10% better in case of SVC. By decision tree it can be clearly seen that on the train the classifier overfitted (F1 score is 1) and on the test data it performes worse (0.7).
+# 
+# Using more samples samples (300) the decision tree classifier worsend a bit, ensemble classifier got a bit better, by SVC we can see gradual increase in F1 score compared to lower training sample trains. This was not the case by the other two classifiers.
+# The predicition time remained more or less the same as it was by 100 samples in case of classifier 1 and 3, by ensemble classifier it worsened a bit.
+# 
+# Generally we can see that the SVC classifier gives us a good generalization with low prediciton time. Decision classifier runs with similar speed, though it does not generalize well on the data, could not avoid the overfit of that model. Ensemble classifier runs with a magnitude of order slower speed, and though generalizes relatively well, the F1 score is not exceptional.
+# 
+# I would recommend SVC classifier since it is the most efficient way with given data.
+# 
 
 # ### Question 4 - Model in Layman's Terms
 # *In one to two paragraphs, explain to the board of directors in layman's terms how the final model chosen is supposed to work. For example if you've chosen to use a decision tree or a support vector machine, how does the model go about making a prediction?*
