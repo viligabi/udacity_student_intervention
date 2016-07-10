@@ -424,17 +424,22 @@ results[results.Classifier=="ExtraTreesClassifier"]
 
 # **Answer: **
 # 
-# What support vector machine does is basically simple. It is trying to separate the data with a straight line/plane so, that distance (margin) between the line and the closest datapoints (support vectors) must be maximized.
+# What support vector machine does is basically simple. It is trying to separate the data with a straight line/plane so, that distance (margin) between the line and the closest datapoints (support vectors) must be maximized. This gives us a solid result which has high chance to classify well unseen data.
 # 
 # <img src="http://dni-institute.in/blogs/wp-content/uploads/2015/09/SVM-Planes.png">
 # 
-# In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension to the data in order to be able to make a straight separator plane.
+# In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension (based on a function which is called kernel) to the data in order to be able to make a straight separator plane. This is called kernel trick.
+# The function of kernel can be a custom made one, it depends on structure of the data what will be the best.
 # 
 # left pic. below - 2D data nonlinear separating plane 
 # 
 # right pic. below - 3D data linear separating plane
 # 
 # <img src="http://i.stack.imgur.com/1gvce.png">
+# 
+# In the case below the inner circle (blue points) clearly cannot be serparated with a line/plane. Using a cubic kernel function it is clear where can we separate the classes.
+# 
+# <img src="http://www.eric-kim.net/eric-kim-net/posts/1/imgs/data_2d_to_3d.png">
 # 
 # 
 # - Since we are maximizing the margin between the different classes of data, we can reach a well generalized model (giving unseen data to the model will highly likely to be still in the desired side of the line).
