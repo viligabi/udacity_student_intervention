@@ -1261,7 +1261,7 @@ F1 score for test set: 0.6866.
 <p>Using more samples samples (300) the decision tree classifier worsend a bit, ensemble classifier got a bit better, by SVC we can see gradual increase in F1 score compared to lower training sample trains. This was not the case by the other two classifiers.
 The predicition time remained more or less the same as it was by 100 samples in case of classifier 1 and 3, by ensemble classifier it worsened a bit.</p>
 <p>Generally we can see that the SVC classifier gives us a good generalization with low prediciton time. Decision classifier runs with similar speed, though it does not generalize well on the data, could not avoid the overfit of that model. Ensemble classifier runs with a magnitude of order slower speed, and though generalizes relatively well, the F1 score is not exceptional.</p>
-<p>I would recommend SVC classifier since it is the most efficient way with given data.</p>
+<p>I would recommend SVC classifier since it is the most efficient predictor with given data.</p>
 
 </div>
 </div>
@@ -1282,6 +1282,15 @@ The predicition time remained more or less the same as it was by 100 samples in 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<p>What support vector machine does is really simple. It is trying to separate the data with a straight line so, that distance between the line and the closest datapoints must be maximized. In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension to the data (i.e. imagine 2D data in 3 dimensions) in order to be able to make a straight separator.</p>
+<ul>
+<li><p>Since we are maximizing the distances with the line between the different classes of data we can reach a well generalized model (giving unseen data to the model will highly likely to be still in the desired side of the line).</p>
+</li>
+<li><p>With additional "fake" dimensions we can separate highly complex data (which are very difficult / impossible to describe with simple rules).</p>
+</li>
+<li><p>"Fake" dimensions are enabling us to make very simple rules on data, which enabling us to make the prediction time very fast.</p>
+</li>
+</ul>
 
 </div>
 </div>

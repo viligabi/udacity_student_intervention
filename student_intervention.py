@@ -379,13 +379,21 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # 
 # Generally we can see that the SVC classifier gives us a good generalization with low prediciton time. Decision classifier runs with similar speed, though it does not generalize well on the data, could not avoid the overfit of that model. Ensemble classifier runs with a magnitude of order slower speed, and though generalizes relatively well, the F1 score is not exceptional.
 # 
-# I would recommend SVC classifier since it is the most efficient way with given data.
+# I would recommend SVC classifier since it is the most efficient predictor with given data.
 # 
 
 # ### Question 4 - Model in Layman's Terms
 # *In one to two paragraphs, explain to the board of directors in layman's terms how the final model chosen is supposed to work. For example if you've chosen to use a decision tree or a support vector machine, how does the model go about making a prediction?*
 
 # **Answer: **
+# 
+# What support vector machine does is really simple. It is trying to separate the data with a straight line so, that distance between the line and the closest datapoints must be maximized. In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension to the data (i.e. imagine 2D data in 3 dimensions) in order to be able to make a straight separator.
+# 
+# - Since we are maximizing the distances with the line between the different classes of data we can reach a well generalized model (giving unseen data to the model will highly likely to be still in the desired side of the line).
+# 
+# - With additional "fake" dimensions we can separate highly complex data (which are very difficult / impossible to describe with simple rules).
+# 
+# - "Fake" dimensions are enabling us to make very simple rules on data, which enabling us to make the prediction time very fast.
 
 # ### Implementation: Model Tuning
 # Fine tune the chosen model. Use grid search (`GridSearchCV`) with at least one important parameter tuned with at least 3 different values. You will need to use the entire training set for this. In the code cell below, you will need to implement the following:
