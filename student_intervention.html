@@ -506,7 +506,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -519,7 +519,7 @@ Feature values:
 <span class="n">num_test</span> <span class="o">=</span> <span class="n">X_all</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">num_train</span>
 
 <span class="c1"># TODO: Shuffle and split the dataset into the number of training and testing points above</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="p">(</span><span class="n">num_test</span><span class="o">/</span><span class="n">X_all</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">stratify</span> <span class="o">=</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="p">(</span><span class="n">num_test</span><span class="o">/</span><span class="n">X_all</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Show the results of the split</span>
 <span class="k">print</span> <span class="s2">&quot;Training set has {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -627,7 +627,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -706,7 +706,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -783,13 +783,13 @@ Testing set has 95 samples.
 ---------------------------------------
 Training a SVC using a training set size of 100. . .
 Trained model in 0.0030 seconds
-Made predictions in 0.0020 seconds.
+Made predictions in 0.0010 seconds.
 Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8609.
 F1 score for test set: 0.8093.
 ---------------------------------------
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0090 seconds
+Trained model in 0.0080 seconds
 Made predictions in 0.0060 seconds.
 Made predictions in 0.0050 seconds.
 F1 score for training set: 0.8387.
@@ -797,50 +797,50 @@ F1 score for test set: 0.8243.
 ---------------------------------------
 Training a SVC using a training set size of 300. . .
 Trained model in 0.0170 seconds
-Made predictions in 0.0120 seconds.
+Made predictions in 0.0130 seconds.
 Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8298.
 F1 score for test set: 0.8497.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0460 seconds
-Made predictions in 0.0330 seconds.
-Made predictions in 0.0840 seconds.
+Trained model in 0.0440 seconds
+Made predictions in 0.0310 seconds.
+Made predictions in 0.0800 seconds.
 F1 score for training set: 0.8592.
 F1 score for test set: 0.7470.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 200. . .
-Trained model in 0.0730 seconds
-Made predictions in 0.1430 seconds.
-Made predictions in 0.1100 seconds.
+Trained model in 0.0470 seconds
+Made predictions in 0.0920 seconds.
+Made predictions in 0.1000 seconds.
 F1 score for training set: 0.8383.
 F1 score for test set: 0.8133.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.0640 seconds
-Made predictions in 0.2290 seconds.
-Made predictions in 0.0850 seconds.
+Trained model in 0.0520 seconds
+Made predictions in 0.2260 seconds.
+Made predictions in 0.0760 seconds.
 F1 score for training set: 0.8353.
 F1 score for test set: 0.7801.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0540 seconds
+Trained model in 0.0520 seconds
 Made predictions in 0.0030 seconds.
-Made predictions in 0.0120 seconds.
+Made predictions in 0.0030 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7071.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0690 seconds
+Trained model in 0.0560 seconds
+Made predictions in 0.0040 seconds.
 Made predictions in 0.0030 seconds.
-Made predictions in 0.0050 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7482.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0640 seconds
+Trained model in 0.0580 seconds
+Made predictions in 0.0040 seconds.
 Made predictions in 0.0030 seconds.
-Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.6866.
 ---------------------------------------
@@ -864,7 +864,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -900,7 +900,7 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>100.0</td>
-      <td>0.002</td>
+      <td>0.001</td>
       <td>0.005</td>
       <td>0.860927</td>
       <td>0.809322</td>
@@ -918,7 +918,7 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.012</td>
+      <td>0.013</td>
       <td>0.004</td>
       <td>0.829787</td>
       <td>0.849673</td>
@@ -927,8 +927,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.033</td>
-      <td>0.084</td>
+      <td>0.031</td>
+      <td>0.080</td>
       <td>0.859155</td>
       <td>0.747045</td>
     </tr>
@@ -936,8 +936,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.143</td>
-      <td>0.110</td>
+      <td>0.092</td>
+      <td>0.100</td>
       <td>0.838284</td>
       <td>0.813333</td>
     </tr>
@@ -945,8 +945,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.229</td>
-      <td>0.085</td>
+      <td>0.226</td>
+      <td>0.076</td>
       <td>0.835267</td>
       <td>0.780142</td>
     </tr>
@@ -955,7 +955,7 @@ F1 score for test set: 0.6866.
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
       <td>0.003</td>
-      <td>0.012</td>
+      <td>0.003</td>
       <td>1.000000</td>
       <td>0.707071</td>
     </tr>
@@ -963,8 +963,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
+      <td>0.004</td>
       <td>0.003</td>
-      <td>0.005</td>
       <td>1.000000</td>
       <td>0.748201</td>
     </tr>
@@ -972,8 +972,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
+      <td>0.004</td>
       <td>0.003</td>
-      <td>0.002</td>
       <td>1.000000</td>
       <td>0.686567</td>
     </tr>

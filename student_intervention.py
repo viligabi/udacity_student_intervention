@@ -157,7 +157,7 @@ X_all = robust_scaler.fit_transform(X_all)
 #   - Set a `random_state` for the function(s) you use, if provided.
 #   - Store the results in `X_train`, `X_test`, `y_train`, and `y_test`.
 
-# In[5]:
+# In[15]:
 
 # TODO: Import any additional functionality you may need here
 from sklearn.cross_validation import train_test_split
@@ -169,7 +169,7 @@ num_train = 300.
 num_test = X_all.shape[0] - num_train
 
 # TODO: Shuffle and split the dataset into the number of training and testing points above
-X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=(num_test/X_all.shape[0]), random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, stratify = y_all, test_size=(num_test/X_all.shape[0]), random_state=1)
 
 # Show the results of the split
 print "Training set has {} samples.".format(X_train.shape[0])
@@ -220,7 +220,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # - `train_predict` - takes as input a classifier, and the training and testing data, and performs `train_clasifier` and `predict_labels`.
 #  - This function will report the F<sub>1</sub> score for both the training and testing data separately.
 
-# In[6]:
+# In[16]:
 
 def train_classifier(clf, X_train, y_train):
     ''' Fits a classifier to the training data. '''
@@ -278,7 +278,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[7]:
+# In[17]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -335,7 +335,7 @@ for clf in [clf_A, clf_B, clf_C]:
 # ### Tabular Results
 # Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
 
-# In[8]:
+# In[18]:
 
 from IPython.display import display
 display(results)
