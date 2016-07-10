@@ -331,38 +331,35 @@ for clf in [clf_A, clf_B, clf_C]:
     print "---------------------------------------"
 
 
-# In[ ]:
+# ### Tabular Results
+# Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
+
+# In[11]:
 
 from IPython.display import display
 display(results)
 
 
-# ### Tabular Results
-# Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
+# ***Classifer 1 - SVC***
 
-# ** Classifer 1 - SVC**  
-# 
-# | Training Set Size | Prediction Time (train) | Prediction Time (test) | F1 Score (train) | F1 Score (test) |
-# | :---------------: | :---------------------: | :--------------------: | :--------------: | :-------------: |
-# | 100               |        0.0040           |        0.0050          |      0.8609      |    0.8067       |
-# | 200               |        0.0070           |        0.0070          |      0.8608      |    0.8205       |
-# | 300               |        0.0140           |        0.0050          |      0.8584      |    0.8462       |
-# 
-# ** Classifer 2 - GaussianNB**  
-# 
-# | Training Set Size | Prediction Time (train) | Prediction Time (test) | F1 Score (train) | F1 Score (test) |
-# | :---------------: | :---------------------: | :--------------------: | :--------------: | :-------------: |
-# | 100               |        0.0170           |        0.0300          |      0.8000      |    0.8077       |
-# | 200               |        0.0350           |        0.0320          |      0.8125      |    0.8202       |
-# | 300               |        0.0630           |        0.0300          |      0.8263      |    0.8182       |
-# 
-# ** Classifer 3 - ExtraTreesClassifier**  
-# 
-# | Training Set Size | Prediction Time (train) | Prediction Time (test) | F1 Score (train) | F1 Score (test) |
-# | :---------------: | :---------------------: | :--------------------: | :--------------: | :-------------: |
-# | 100               |        0.0020           |        0.0030          |      1.0000      |    0.7008       |
-# | 200               |        0.0030           |        0.0030          |      1.0000      |    0.7072       |
-# | 300               |        0.0030           |        0.0020          |      1.0000      |    0.7879       |
+# In[31]:
+
+results[results.Classifier=="SVC"]
+
+
+# ***Classifer 2 - Ensemble***
+
+# In[27]:
+
+results[results.Classifier=="BaggingClassifier"]
+
+
+# ***Classifer 3 - ExtraTreesClassifier***
+
+# In[28]:
+
+results[results.Classifier=="ExtraTreesClassifier"]
+
 
 # ## Choosing the Best Model
 # In this final section, you will choose from the three supervised learning models the *best* model to use on the student data. You will then perform a grid search optimization for the model over the entire training set (`X_train` and `y_train`) by tuning at least one parameter to improve upon the untuned model's F<sub>1</sub> score. 

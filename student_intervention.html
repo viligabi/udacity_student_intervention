@@ -851,20 +851,6 @@ F1 score for test set: 0.6866.
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="n">display</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -875,116 +861,374 @@ F1 score for test set: 0.6866.
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">display</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Classifier</th>
+      <th>Training Set Size</th>
+      <th>Prediction Time (train)</th>
+      <th>Prediction Time (test)</th>
+      <th>F1 Score (train)</th>
+      <th>F1 Score (test)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>100.0</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>0.860927</td>
+      <td>0.809322</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>200.0</td>
+      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.838710</td>
+      <td>0.824281</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>300.0</td>
+      <td>0.005</td>
+      <td>0.002</td>
+      <td>0.829787</td>
+      <td>0.849673</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>100.0</td>
+      <td>0.014</td>
+      <td>0.031</td>
+      <td>0.859155</td>
+      <td>0.747045</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>200.0</td>
+      <td>0.041</td>
+      <td>0.042</td>
+      <td>0.838284</td>
+      <td>0.813333</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>300.0</td>
+      <td>0.096</td>
+      <td>0.035</td>
+      <td>0.835267</td>
+      <td>0.780142</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>100.0</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>1.000000</td>
+      <td>0.707071</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>200.0</td>
+      <td>0.002</td>
+      <td>0.002</td>
+      <td>1.000000</td>
+      <td>0.748201</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>300.0</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>1.000000</td>
+      <td>0.686567</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong> Classifer 1 - SVC</strong></p>
-<table>
-<thead><tr>
-<th style="text-align:center">Training Set Size</th>
-<th style="text-align:center">Prediction Time (train)</th>
-<th style="text-align:center">Prediction Time (test)</th>
-<th style="text-align:center">F1 Score (train)</th>
-<th style="text-align:center">F1 Score (test)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">100</td>
-<td style="text-align:center">0.0040</td>
-<td style="text-align:center">0.0050</td>
-<td style="text-align:center">0.8609</td>
-<td style="text-align:center">0.8067</td>
-</tr>
-<tr>
-<td style="text-align:center">200</td>
-<td style="text-align:center">0.0070</td>
-<td style="text-align:center">0.0070</td>
-<td style="text-align:center">0.8608</td>
-<td style="text-align:center">0.8205</td>
-</tr>
-<tr>
-<td style="text-align:center">300</td>
-<td style="text-align:center">0.0140</td>
-<td style="text-align:center">0.0050</td>
-<td style="text-align:center">0.8584</td>
-<td style="text-align:center">0.8462</td>
-</tr>
-</tbody>
-</table>
-<p><strong> Classifer 2 - GaussianNB</strong></p>
-<table>
-<thead><tr>
-<th style="text-align:center">Training Set Size</th>
-<th style="text-align:center">Prediction Time (train)</th>
-<th style="text-align:center">Prediction Time (test)</th>
-<th style="text-align:center">F1 Score (train)</th>
-<th style="text-align:center">F1 Score (test)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">100</td>
-<td style="text-align:center">0.0170</td>
-<td style="text-align:center">0.0300</td>
-<td style="text-align:center">0.8000</td>
-<td style="text-align:center">0.8077</td>
-</tr>
-<tr>
-<td style="text-align:center">200</td>
-<td style="text-align:center">0.0350</td>
-<td style="text-align:center">0.0320</td>
-<td style="text-align:center">0.8125</td>
-<td style="text-align:center">0.8202</td>
-</tr>
-<tr>
-<td style="text-align:center">300</td>
-<td style="text-align:center">0.0630</td>
-<td style="text-align:center">0.0300</td>
-<td style="text-align:center">0.8263</td>
-<td style="text-align:center">0.8182</td>
-</tr>
-</tbody>
-</table>
-<p><strong> Classifer 3 - ExtraTreesClassifier</strong></p>
-<table>
-<thead><tr>
-<th style="text-align:center">Training Set Size</th>
-<th style="text-align:center">Prediction Time (train)</th>
-<th style="text-align:center">Prediction Time (test)</th>
-<th style="text-align:center">F1 Score (train)</th>
-<th style="text-align:center">F1 Score (test)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">100</td>
-<td style="text-align:center">0.0020</td>
-<td style="text-align:center">0.0030</td>
-<td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7008</td>
-</tr>
-<tr>
-<td style="text-align:center">200</td>
-<td style="text-align:center">0.0030</td>
-<td style="text-align:center">0.0030</td>
-<td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7072</td>
-</tr>
-<tr>
-<td style="text-align:center">300</td>
-<td style="text-align:center">0.0030</td>
-<td style="text-align:center">0.0020</td>
-<td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7879</td>
-</tr>
-</tbody>
-</table>
+<p><strong><em>Classifer 1 - SVC</em></strong></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;SVC&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Classifier</th>
+      <th>Training Set Size</th>
+      <th>Prediction Time (train)</th>
+      <th>Prediction Time (test)</th>
+      <th>F1 Score (train)</th>
+      <th>F1 Score (test)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>100.0</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>0.860927</td>
+      <td>0.809322</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>200.0</td>
+      <td>0.002</td>
+      <td>0.003</td>
+      <td>0.838710</td>
+      <td>0.824281</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>SVC</td>
+      <td>300.0</td>
+      <td>0.005</td>
+      <td>0.002</td>
+      <td>0.829787</td>
+      <td>0.849673</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Classifer 2 - Ensemble</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;BaggingClassifier&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Classifier</th>
+      <th>Training Set Size</th>
+      <th>Prediction Time (train)</th>
+      <th>Prediction Time (test)</th>
+      <th>F1 Score (train)</th>
+      <th>F1 Score (test)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>100.0</td>
+      <td>0.014</td>
+      <td>0.031</td>
+      <td>0.859155</td>
+      <td>0.747045</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>200.0</td>
+      <td>0.041</td>
+      <td>0.042</td>
+      <td>0.838284</td>
+      <td>0.813333</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>BaggingClassifier</td>
+      <td>300.0</td>
+      <td>0.096</td>
+      <td>0.035</td>
+      <td>0.835267</td>
+      <td>0.780142</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Classifer 3 - ExtraTreesClassifier</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">Classifier</span><span class="o">==</span><span class="s2">&quot;ExtraTreesClassifier&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Classifier</th>
+      <th>Training Set Size</th>
+      <th>Prediction Time (train)</th>
+      <th>Prediction Time (test)</th>
+      <th>F1 Score (train)</th>
+      <th>F1 Score (test)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>100.0</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>1.0</td>
+      <td>0.707071</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>200.0</td>
+      <td>0.002</td>
+      <td>0.002</td>
+      <td>1.0</td>
+      <td>0.748201</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ExtraTreesClassifier</td>
+      <td>300.0</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>1.0</td>
+      <td>0.686567</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
