@@ -414,9 +414,20 @@ results[results.Classifier=="ExtraTreesClassifier"]
 
 # **Answer: **
 # 
-# What support vector machine does is really simple. It is trying to separate the data with a straight line so, that distance between the line and the closest datapoints must be maximized. In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension to the data (i.e. imagine 2D data in 3 dimensions) in order to be able to make a straight separator.
+# What support vector machine does is basically simple. It is trying to separate the data with a straight line/plane so, that distance (margin) between the line and the closest datapoints (support vectors) must be maximized.
 # 
-# - Since we are maximizing the distances with the line between the different classes of data we can reach a well generalized model (giving unseen data to the model will highly likely to be still in the desired side of the line).
+# <img src="http://dni-institute.in/blogs/wp-content/uploads/2015/09/SVM-Planes.png">
+# 
+# In case if the data cannot be separated with a single line, the machine is giving a "fake" dimension to the data in order to be able to make a straight separator plane.
+# 
+# left pic. below - 2D data nonlinear separating plane 
+# 
+# right pic. below - 3D data linear separating plane
+# 
+# <img src="http://i.stack.imgur.com/1gvce.png">
+# 
+# 
+# - Since we are maximizing the margin between the different classes of data, we can reach a well generalized model (giving unseen data to the model will highly likely to be still in the desired side of the line).
 # 
 # - With additional "fake" dimensions we can separate highly complex data (which are very difficult / impossible to describe with simple rules).
 # 
