@@ -49,13 +49,14 @@ print "Student data read successfully!"
 # - The graduation rate of the class, `grad_rate`, in percent (%).
 # 
 
-# In[2]:
+# In[14]:
 
 # TODO: Calculate number of students
 n_students = student_data.shape[0]
 
 # TODO: Calculate number of features
-n_features = student_data.shape[1]
+# "passed" column is also included, so it needs to be deducted
+n_features = student_data.shape[1]-1
 
 # TODO: Calculate passing students
 n_passed = student_data.loc[student_data["passed"]=="yes"].shape[0]
