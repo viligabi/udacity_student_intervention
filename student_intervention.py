@@ -185,25 +185,40 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # **Answer: **
 # 
 # **SVM**: 
-# 
+#  
 # Pro:
 # * Separates data using linear function (fast predictions)
 # * Maximalizes margin (helps to avoid overfitting)
-# * Using kernel trick (enriching data dimensions) it can solve highly complex issues
+# * Using kernel trick (enriching data dimensions) it can solve highly complex issues (high number of features)
 # 
 # Con:
 # * Goodness is highly depending on the chosen kernel function (different datasets may need different kernel function)
+# * Sensitivity to noisy data
+# 
+# Applications:
+# * Bioinformatics (cancer classification, protein classification etc)
+# * Image classification
+# * Text categorization
+# 
+# Why:
+# * After preproccessing the data we have 48 features, which is relatively high
+# * For high variety of probelms it gives good resolution for the first shot, so it worth a try :)
 # 
 # **Ensemble**:
 # 
 # Pro:
 # * using random subsets of data (bagging) creating rules (weak learning), summing up the "subrules" we can create complex rules on dataset
-# * using these complex rules the error rate can be kept relatively low (no overfitting), and
+# * using these complex rules the error rate can be kept relatively low (no overfitting)
 # * high dimensional data can be handled quite well
 # 
 # Con:
 # * using too many rules, the training and prediction times might be too much
 # 
+# Applications:
+# * like by SVM, problems with high complexity
+# 
+# Why:
+# * the dataset has many features -> complexity is high
 # 
 # **Decision Tree**:
 # 
@@ -212,6 +227,17 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # 
 # Con:
 # * easy to overfit on given data -> not generalizing well enough
+# * ineffective to solve non-linear problems
+# 
+# Applications:
+# * physics: detection of particles
+# * molecular biology: amino acid sequence analysis
+# * control systems
+# 
+# Why:
+# * low need of preprocessing of data due that the model is using maximum information gain during rule selection
+# * many features are binary -> easily (linearly) separable
+# 
 
 # ### Setup
 # Run the code cell below to initialize three helper functions which you can use for training and testing the three supervised learning models you've chosen above. The functions are as follows:

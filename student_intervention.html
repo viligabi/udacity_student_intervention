@@ -577,22 +577,42 @@ Testing set has 95 samples.
 <ul>
 <li>Separates data using linear function (fast predictions)</li>
 <li>Maximalizes margin (helps to avoid overfitting)</li>
-<li>Using kernel trick (enriching data dimensions) it can solve highly complex issues</li>
+<li>Using kernel trick (enriching data dimensions) it can solve highly complex issues (high number of features)</li>
 </ul>
 <p>Con:</p>
 <ul>
 <li>Goodness is highly depending on the chosen kernel function (different datasets may need different kernel function)</li>
+<li>Sensitivity to noisy data</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Bioinformatics (cancer classification, protein classification etc)</li>
+<li>Image classification</li>
+<li>Text categorization</li>
+</ul>
+<p>Why:</p>
+<ul>
+<li>After preproccessing the data we have 48 features, which is relatively high</li>
+<li>For high variety of probelms it gives good resolution for the first shot, so it worth a try :)</li>
 </ul>
 <p><strong>Ensemble</strong>:</p>
 <p>Pro:</p>
 <ul>
 <li>using random subsets of data (bagging) creating rules (weak learning), summing up the "subrules" we can create complex rules on dataset</li>
-<li>using these complex rules the error rate can be kept relatively low (no overfitting), and</li>
+<li>using these complex rules the error rate can be kept relatively low (no overfitting)</li>
 <li>high dimensional data can be handled quite well</li>
 </ul>
 <p>Con:</p>
 <ul>
 <li>using too many rules, the training and prediction times might be too much</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>like by SVM, problems with high complexity</li>
+</ul>
+<p>Why:</p>
+<ul>
+<li>the dataset has many features -&gt; complexity is high</li>
 </ul>
 <p><strong>Decision Tree</strong>:</p>
 <p>Pro:</p>
@@ -602,6 +622,18 @@ Testing set has 95 samples.
 <p>Con:</p>
 <ul>
 <li>easy to overfit on given data -&gt; not generalizing well enough</li>
+<li>ineffective to solve non-linear problems</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>physics: detection of particles</li>
+<li>molecular biology: amino acid sequence analysis</li>
+<li>control systems</li>
+</ul>
+<p>Why:</p>
+<ul>
+<li>low need of preprocessing of data due that the model is using maximum information gain during rule selection</li>
+<li>many features are binary -&gt; easily (linearly) separable</li>
 </ul>
 
 </div>
