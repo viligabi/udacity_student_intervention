@@ -49,7 +49,7 @@ print "Student data read successfully!"
 # - The graduation rate of the class, `grad_rate`, in percent (%).
 # 
 
-# In[14]:
+# In[2]:
 
 # TODO: Calculate number of students
 n_students = student_data.shape[0]
@@ -157,7 +157,7 @@ X_all = robust_scaler.fit_transform(X_all)
 #   - Set a `random_state` for the function(s) you use, if provided.
 #   - Store the results in `X_train`, `X_test`, `y_train`, and `y_test`.
 
-# In[15]:
+# In[5]:
 
 # TODO: Import any additional functionality you may need here
 from sklearn.cross_validation import train_test_split
@@ -199,8 +199,11 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # * Bioinformatics (cancer classification, protein classification etc)
 # * Image classification
 # * Text categorization
+# * Control systems
+# * Environmental sciences (i.e. weather modelling)
 # 
 # Why:
+# * Fast prediction is one thing what we are looking for (cost)
 # * After preproccessing the data we have 48 features, which is relatively high
 # * For high variety of probelms it gives good resolution for the first shot, so it worth a try :)
 # 
@@ -218,12 +221,14 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # * like by SVM, problems with high complexity
 # 
 # Why:
-# * the dataset has many features -> complexity is high
+# * the dataset has many features -> complexity is high, the classifier is might be good for solving this
+# * well generalized model can be trained
 # 
-# **Decision Tree**:
+# **Extra Tree**:
 # 
 # Pro:
 # * fast prediction
+# * using extremly randomization it performs better than a simple decision tree
 # 
 # Con:
 # * easy to overfit on given data -> not generalizing well enough
@@ -237,6 +242,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # Why:
 # * low need of preprocessing of data due that the model is using maximum information gain during rule selection
 # * many features are binary -> easily (linearly) separable
+# * fast prediction - low cost
 # 
 
 # ### Setup
@@ -246,7 +252,7 @@ print "Testing set has {} samples.".format(X_test.shape[0])
 # - `train_predict` - takes as input a classifier, and the training and testing data, and performs `train_clasifier` and `predict_labels`.
 #  - This function will report the F<sub>1</sub> score for both the training and testing data separately.
 
-# In[16]:
+# In[6]:
 
 def train_classifier(clf, X_train, y_train):
     ''' Fits a classifier to the training data. '''
@@ -304,7 +310,7 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 # - Fit each model with each training set size and make predictions on the test set (9 in total).  
 # **Note:** Three tables are provided after the following code cell which can be used to store your results.
 
-# In[17]:
+# In[7]:
 
 # TODO: Import the three supervised learning models from sklearn
 # from sklearn import model_A
@@ -361,7 +367,7 @@ for clf in [clf_A, clf_B, clf_C]:
 # ### Tabular Results
 # Edit the cell below to see how a table can be designed in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables). You can record your results from above in the tables provided.
 
-# In[18]:
+# In[8]:
 
 from IPython.display import display
 display(results)
@@ -407,6 +413,10 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # Generally we can see that the SVC classifier gives us a good generalization with low prediciton time. Decision classifier runs with similar speed, though it does not generalize well on the data, could not avoid the overfit of that model. Ensemble classifier runs with a magnitude of order slower speed, and though generalizes relatively well, the F1 score is not exceptional.
 # 
 # I would recommend SVC classifier since it is the most efficient predictor with given data.
+# 
+# Later on when more data will be available most probably the F1 score with SVM going to increase, though the training/prediction time going to increase.
+# 
+# Approximately by 100.000 datapoints I'd advise to change the model to a model which can handle more effectively bigger datasets like SGD classifier or kernel approximation.
 # 
 
 # ### Question 4 - Model in Layman's Terms

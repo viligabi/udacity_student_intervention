@@ -281,7 +281,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -506,7 +506,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -589,9 +589,12 @@ Testing set has 95 samples.
 <li>Bioinformatics (cancer classification, protein classification etc)</li>
 <li>Image classification</li>
 <li>Text categorization</li>
+<li>Control systems</li>
+<li>Environmental sciences (i.e. weather modelling)</li>
 </ul>
 <p>Why:</p>
 <ul>
+<li>Fast prediction is one thing what we are looking for (cost)</li>
 <li>After preproccessing the data we have 48 features, which is relatively high</li>
 <li>For high variety of probelms it gives good resolution for the first shot, so it worth a try :)</li>
 </ul>
@@ -612,12 +615,14 @@ Testing set has 95 samples.
 </ul>
 <p>Why:</p>
 <ul>
-<li>the dataset has many features -&gt; complexity is high</li>
+<li>the dataset has many features -&gt; complexity is high, the classifier is might be good for solving this</li>
+<li>well generalized model can be trained</li>
 </ul>
-<p><strong>Decision Tree</strong>:</p>
+<p><strong>Extra Tree</strong>:</p>
 <p>Pro:</p>
 <ul>
 <li>fast prediction</li>
+<li>using extremly randomization it performs better than a simple decision tree</li>
 </ul>
 <p>Con:</p>
 <ul>
@@ -634,6 +639,7 @@ Testing set has 95 samples.
 <ul>
 <li>low need of preprocessing of data due that the model is using maximum information gain during rule selection</li>
 <li>many features are binary -&gt; easily (linearly) separable</li>
+<li>fast prediction - low cost</li>
 </ul>
 
 </div>
@@ -659,7 +665,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -738,7 +744,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -815,15 +821,15 @@ Testing set has 95 samples.
 ---------------------------------------
 Training a SVC using a training set size of 100. . .
 Trained model in 0.0030 seconds
-Made predictions in 0.0010 seconds.
-Made predictions in 0.0050 seconds.
+Made predictions in 0.0020 seconds.
+Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8609.
 F1 score for test set: 0.8093.
 ---------------------------------------
 Training a SVC using a training set size of 200. . .
 Trained model in 0.0080 seconds
 Made predictions in 0.0060 seconds.
-Made predictions in 0.0050 seconds.
+Made predictions in 0.0060 seconds.
 F1 score for training set: 0.8387.
 F1 score for test set: 0.8243.
 ---------------------------------------
@@ -835,44 +841,44 @@ F1 score for training set: 0.8298.
 F1 score for test set: 0.8497.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 100. . .
-Trained model in 0.0440 seconds
-Made predictions in 0.0310 seconds.
-Made predictions in 0.0800 seconds.
+Trained model in 0.0490 seconds
+Made predictions in 0.0320 seconds.
+Made predictions in 0.0830 seconds.
 F1 score for training set: 0.8592.
 F1 score for test set: 0.7470.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 200. . .
 Trained model in 0.0470 seconds
-Made predictions in 0.0920 seconds.
-Made predictions in 0.1000 seconds.
+Made predictions in 0.0950 seconds.
+Made predictions in 0.0950 seconds.
 F1 score for training set: 0.8383.
 F1 score for test set: 0.8133.
 ---------------------------------------
 Training a BaggingClassifier using a training set size of 300. . .
-Trained model in 0.0520 seconds
+Trained model in 0.0510 seconds
 Made predictions in 0.2260 seconds.
-Made predictions in 0.0760 seconds.
+Made predictions in 0.0720 seconds.
 F1 score for training set: 0.8353.
 F1 score for test set: 0.7801.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 100. . .
-Trained model in 0.0520 seconds
-Made predictions in 0.0030 seconds.
-Made predictions in 0.0030 seconds.
+Trained model in 0.0440 seconds
+Made predictions in 0.0020 seconds.
+Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7071.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 200. . .
-Trained model in 0.0560 seconds
-Made predictions in 0.0040 seconds.
+Trained model in 0.0510 seconds
 Made predictions in 0.0030 seconds.
+Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.7482.
 ---------------------------------------
 Training a ExtraTreesClassifier using a training set size of 300. . .
-Trained model in 0.0580 seconds
-Made predictions in 0.0040 seconds.
-Made predictions in 0.0030 seconds.
+Trained model in 0.0460 seconds
+Made predictions in 0.0050 seconds.
+Made predictions in 0.0020 seconds.
 F1 score for training set: 1.0000.
 F1 score for test set: 0.6866.
 ---------------------------------------
@@ -896,7 +902,7 @@ F1 score for test set: 0.6866.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -932,8 +938,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>100.0</td>
-      <td>0.001</td>
-      <td>0.005</td>
+      <td>0.002</td>
+      <td>0.004</td>
       <td>0.860927</td>
       <td>0.809322</td>
     </tr>
@@ -942,7 +948,7 @@ F1 score for test set: 0.6866.
       <td>SVC</td>
       <td>200.0</td>
       <td>0.006</td>
-      <td>0.005</td>
+      <td>0.006</td>
       <td>0.838710</td>
       <td>0.824281</td>
     </tr>
@@ -959,8 +965,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.031</td>
-      <td>0.080</td>
+      <td>0.032</td>
+      <td>0.083</td>
       <td>0.859155</td>
       <td>0.747045</td>
     </tr>
@@ -968,8 +974,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.092</td>
-      <td>0.100</td>
+      <td>0.095</td>
+      <td>0.095</td>
       <td>0.838284</td>
       <td>0.813333</td>
     </tr>
@@ -978,7 +984,7 @@ F1 score for test set: 0.6866.
       <td>BaggingClassifier</td>
       <td>300.0</td>
       <td>0.226</td>
-      <td>0.076</td>
+      <td>0.072</td>
       <td>0.835267</td>
       <td>0.780142</td>
     </tr>
@@ -986,8 +992,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
-      <td>0.003</td>
-      <td>0.003</td>
+      <td>0.002</td>
+      <td>0.002</td>
       <td>1.000000</td>
       <td>0.707071</td>
     </tr>
@@ -995,8 +1001,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
-      <td>0.004</td>
       <td>0.003</td>
+      <td>0.002</td>
       <td>1.000000</td>
       <td>0.748201</td>
     </tr>
@@ -1004,8 +1010,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
-      <td>0.004</td>
-      <td>0.003</td>
+      <td>0.005</td>
+      <td>0.002</td>
       <td>1.000000</td>
       <td>0.686567</td>
     </tr>
@@ -1068,7 +1074,7 @@ F1 score for test set: 0.6866.
       <td>SVC</td>
       <td>100.0</td>
       <td>0.002</td>
-      <td>0.005</td>
+      <td>0.004</td>
       <td>0.860927</td>
       <td>0.809322</td>
     </tr>
@@ -1077,7 +1083,7 @@ F1 score for test set: 0.6866.
       <td>SVC</td>
       <td>200.0</td>
       <td>0.006</td>
-      <td>0.005</td>
+      <td>0.006</td>
       <td>0.838710</td>
       <td>0.824281</td>
     </tr>
@@ -1085,7 +1091,7 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>SVC</td>
       <td>300.0</td>
-      <td>0.012</td>
+      <td>0.013</td>
       <td>0.004</td>
       <td>0.829787</td>
       <td>0.849673</td>
@@ -1148,8 +1154,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>100.0</td>
-      <td>0.033</td>
-      <td>0.084</td>
+      <td>0.032</td>
+      <td>0.083</td>
       <td>0.859155</td>
       <td>0.747045</td>
     </tr>
@@ -1157,8 +1163,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>200.0</td>
-      <td>0.143</td>
-      <td>0.110</td>
+      <td>0.095</td>
+      <td>0.095</td>
       <td>0.838284</td>
       <td>0.813333</td>
     </tr>
@@ -1166,8 +1172,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>BaggingClassifier</td>
       <td>300.0</td>
-      <td>0.229</td>
-      <td>0.085</td>
+      <td>0.226</td>
+      <td>0.072</td>
       <td>0.835267</td>
       <td>0.780142</td>
     </tr>
@@ -1229,8 +1235,8 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>100.0</td>
-      <td>0.003</td>
-      <td>0.012</td>
+      <td>0.002</td>
+      <td>0.002</td>
       <td>1.0</td>
       <td>0.707071</td>
     </tr>
@@ -1239,7 +1245,7 @@ F1 score for test set: 0.6866.
       <td>ExtraTreesClassifier</td>
       <td>200.0</td>
       <td>0.003</td>
-      <td>0.005</td>
+      <td>0.002</td>
       <td>1.0</td>
       <td>0.748201</td>
     </tr>
@@ -1247,7 +1253,7 @@ F1 score for test set: 0.6866.
       <th>0</th>
       <td>ExtraTreesClassifier</td>
       <td>300.0</td>
-      <td>0.003</td>
+      <td>0.005</td>
       <td>0.002</td>
       <td>1.0</td>
       <td>0.686567</td>
@@ -1295,6 +1301,8 @@ F1 score for test set: 0.6866.
 The predicition time remained more or less the same as it was by 100 samples in case of classifier 1 and 3, by ensemble classifier it worsened a bit.</p>
 <p>Generally we can see that the SVC classifier gives us a good generalization with low prediciton time. Decision classifier runs with similar speed, though it does not generalize well on the data, could not avoid the overfit of that model. Ensemble classifier runs with a magnitude of order slower speed, and though generalizes relatively well, the F1 score is not exceptional.</p>
 <p>I would recommend SVC classifier since it is the most efficient predictor with given data.</p>
+<p>Later on when more data will be available most probably the F1 score with SVM going to increase, though the training/prediction time going to increase.</p>
+<p>Approximately by 100.000 datapoints I'd advise to change the model to a model which can handle more effectively bigger datasets like SGD classifier or kernel approximation.</p>
 
 </div>
 </div>
@@ -1405,10 +1413,10 @@ The predicition time remained more or less the same as it was by 100 samples in 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0140 seconds.
-Made predictions in 0.0040 seconds.
-Tuned model has a training F1 score of 0.8678.
-Tuned model has a testing F1 score of 0.8497.
+<pre>Made predictions in 0.0080 seconds.
+Made predictions in 0.0020 seconds.
+Tuned model has a training F1 score of 0.8528.
+Tuned model has a testing F1 score of 0.8105.
 </pre>
 </div>
 </div>
