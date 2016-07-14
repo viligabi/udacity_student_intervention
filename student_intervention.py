@@ -459,12 +459,47 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[12]:
+# In[15]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
 from sklearn.metrics import make_scorer
 from sklearn.metrics import f1_score
+import matplotlib.pyplot as plt
+get_ipython().magic(u'matplotlib inline')
+
+def visual_gridsearch(model, X, y):
+    from matplotlib import colors
+    from matplotlib.colors import ListedColormap
+
+    ddl_heat = ['#DBDBDB','#DCD5CC','#DCCEBE','#DDC8AF','#DEC2A0','#DEBB91',                '#DFB583','#DFAE74','#E0A865','#E1A256','#E19B48','#E29539']
+    ddlheatmap = colors.ListedColormap(ddl_heat)
+    C_range = np.logspace(-0.5, 0.5, num=20)
+    gamma_range = np.logspace(-2, -0.5, num=20)
+    param_grid = dict(gamma=gamma_range, C=C_range)
+    grid = grid_search.GridSearchCV(svm.SVC(), param_grid=param_grid)
+    grid.fit(X, y)
+
+    scores = [x[1] for x in grid.grid_scores_]
+    scores = np.array(scores).reshape(len(C_range), len(gamma_range))
+
+    plt.figure(figsize=(8, 6))
+    plt.subplots_adjust(left=.2, right=0.95, bottom=0.15, top=0.95)
+    plt.imshow(scores, interpolation='nearest', cmap=ddlheatmap)
+    plt.xlabel('gamma')
+    plt.ylabel('C')
+    plt.colorbar()
+    plt.xticks(np.arange(len(gamma_range)), gamma_range, rotation=45)
+    plt.yticks(np.arange(len(C_range)), C_range)
+    plt.title(
+        "The best parameters are {} with a score of {:0.2f}.".format(
+        grid.best_params_, grid.best_score_)
+    )
+    plt.show()
+    return grid
+
+grid_obj = visual_gridsearch(svm.SVC(), X_train, y_train)
+
 
 # TODO: Create the parameters list you wish to tune
 parameters = {
@@ -473,16 +508,16 @@ parameters = {
 }
 
 # TODO: Initialize the classifier
-clf = svm.SVC(kernel = 'rbf')
+#clf = svm.SVC(kernel = 'rbf')
 
 # TODO: Make an f1 scoring function using 'make_scorer' 
-f1_scorer = make_scorer(f1_score, pos_label="yes")
+#f1_scorer = make_scorer(f1_score, pos_label="yes")
 
 # TODO: Perform grid search on the classifier using the f1_scorer as the scoring method
-grid_obj = grid_search.GridSearchCV(clf, parameters, scoring=f1_scorer,cv=2)
+#grid_obj = grid_search.GridSearchCV(clf, parameters, scoring=f1_scorer,cv=2)
 
 # TODO: Fit the grid search object to the training data and find the optimal parameters
-grid_obj = grid_obj.fit(X_train, y_train)
+#grid_obj = grid_obj.fit(X_train, y_train)
 
 # Get the estimator
 clf = grid_obj.best_estimator_
