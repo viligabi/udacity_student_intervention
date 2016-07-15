@@ -459,7 +459,7 @@ results[results.Classifier=="ExtraTreesClassifier"]
 # - Perform grid search on the classifier `clf` using `f1_scorer` as the scoring method, and store it in `grid_obj`.
 # - Fit the grid search object to the training data (`X_train`, `y_train`), and store it in `grid_obj`.
 
-# In[12]:
+# In[13]:
 
 # TODO: Import 'gridSearchCV' and 'make_scorer'
 from sklearn import grid_search
@@ -491,7 +491,9 @@ def visual_gridsearch(model, X, y):
         tmp = tmp.T
         tmp.columns = columns
         scores_pd = scores_pd.append(tmp)
-        print num
+        #print num
+    import seaborn as sns
+    sns.heatmap(scores_pd.pivot("C","gamma","score"))
     
     # get scores in list
     scores = [x[1] for x in grid.grid_scores_]
